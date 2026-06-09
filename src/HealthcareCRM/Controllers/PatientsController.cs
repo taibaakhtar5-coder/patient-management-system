@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
-using PatientManagementSystem.Models;
+using HealthcareCRM.Models;
 
 namespace HealthcareCRM.Controllers
 {
