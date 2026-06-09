@@ -1,4 +1,3 @@
-'EOF'
 using System;
 namespace HealthcareCRM.Models
 {
@@ -14,4 +13,3 @@ namespace HealthcareCRM.Models
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     }
 }
-EOF
