@@ -1,35 +1,38 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace HealthcareCRM.Models
+namespace PatientManagementSystem.Models
 {
     public class Patient
     {
-        [Key]
-        public Guid Id { get; set; } = Guid.NewGuid();
+        public int Id { get; set; }
 
-        [Required]
-        [MaxLength(100)]
-        public string FullName { get; set; } = string.Empty;
+        [Required(ErrorMessage = "First Name is required.")]
+        [StringLength(50)]
+        public string FirstName { get; set; } = string.Empty;
 
-        [EmailAddress]
-        [MaxLength(150)]
-        public string? Email { get; set; }
+        [Required(ErrorMessage = "Last Name is required.")]
+        [StringLength(50)]
+        public string LastName { get; set; } = string.Empty;
 
-        [Required]
-        [MaxLength(20)]
-        public string PhoneNumber { get; set; } = string.Empty;
+        [Required(ErrorMessage = "Age is required.")]
+        [Range(1, 120, ErrorMessage = "Age must be between 1 and 120.")]
+        public int Age { get; set; }
 
-        [Required]
-        public DateTime DateOfBirth { get; set; }
-
-        [Required]
-        [MaxLength(20)]
+        [Required(ErrorMessage = "Gender is required.")]
         public string Gender { get; set; } = string.Empty;
 
-        [MaxLength(250)]
-        public string? Address { get; set; }
+        [Required(ErrorMessage = "Phone Number is required.")]
+        [Phone(ErrorMessage = "Invalid phone number format.")]
+        public string PhoneNumber { get; set; } = string.Empty;
 
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        [EmailAddress(ErrorMessage = "Invalid email address format.")]
+        public string? Email { get; set; }
+
+        [Required(ErrorMessage = "Address is required.")]
+        [StringLength(255)]
+        public string Address { get; set; } = string.Empty;
+
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
     }
 }
