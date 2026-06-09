@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace PatientManagementSystem.Models
+namespace HealthcareCRM.Models
 {
     public class Patient
     {

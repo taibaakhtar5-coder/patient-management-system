@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using PatientManagementSystem.Models;
 
-namespace PatientManagementSystem.Controllers
+namespace HealthcareCRM.Controllers
 {
     [ApiController]
     [Route("api/patients")]
